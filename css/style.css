@@ -1,13 +1,16 @@
 /* Fontes */
 @import url(../font/lemon-milk/stylesheet.css);
 @import url(../font/mustica/stylesheet.css);
-@import url(../font/alto-haas/stylesheet.css);
 
 /* Resets já feitos pelo bootstrap. */
 h1, h2, h3, h4, h5, p {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+}
+
+html {
+    height: 100%;
 }
 
 /* Variáveis */
@@ -20,7 +23,16 @@ h1, h2, h3, h4, h5, p {
     :root {
         --spacing: 2.625rem 2.5rem
     }
+
 }
+
+@media screen and (max-width: 530px) {
+    :root {
+        --spacing: 2.625rem 1.5rem
+    }
+
+}
+
 
 /* Tamanho das Fontes */
 h1 { font-size: 4rem;}
@@ -69,7 +81,32 @@ p { font-size: 1.180rem;}
     h5 { font-size: 1.45rem;}
     h6 { font-size: 0.95rem;}
     p { font-size: .73rem;}
+    .butn { font-size: 1rem;}
 }
+
+@media screen and (max-width: 550px) {
+    h1 { font-size: 3.35rem;}
+    h2 { font-size: 2.45rem;}
+    h3 { font-size: 2.35rem;}
+    h4 { font-size: 1.75rem;}
+    h5 { font-size: 1.35rem;}
+    h6 { font-size: 0.75rem;}
+    p { font-size: .83rem;}
+    .butn { font-size: 1rem !important;}
+}
+
+@media screen and (max-width: 460px) {
+    h1 { font-size: 2.8rem;}
+    h2 { font-size: 2.25rem;}
+    h3 { font-size: 2.15rem;}
+    h4 { font-size: 1.55rem;}
+    h5 { font-size: 1.15rem;}
+    h6 { font-size: 0.55rem;}
+    p { font-size: .83rem;}
+    .butn {font-size: 0.9rem;}
+}
+
+
 
 /* Classes HTML */
 .cta-t { color: rgb(255, 0, 0); font-family: LEMON MILK; text-transform: uppercase;}
@@ -229,8 +266,12 @@ main {
 }
 
 /* Bairros */
+#map {
+    width: 100%;
+}
+
 #map iframe {
-    height: 100%;
+    width: 100%;
 }
 
 .districts {
@@ -238,7 +279,37 @@ main {
 }
 
 .districts ul {
+    word-break: keep-all;
     list-style: none;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+.districts ul li {
+    margin: auto;
+    text-align: left;
+}
+
+@media screen and (max-width: 992px) {
+    .districts ul li {
+        text-align: center;
+    }
+
+    .districts ul:nth-child(3), .districts ul:nth-child(4) {
+        margin-top: 2.25rem;
+    }
+
+    .districts {
+        margin-top: 2.25rem;
+    }
+}
+
+.districts-list {
+    display: inline;
+}
+
+.districts.row  {
+    margin-left: 0;
 }
 
 .districts ul:first-child {
@@ -274,7 +345,7 @@ main {
 
 /* Media Queries */
 
-@media screen and (max-width: 1490px) {
+@media screen and (max-width: 1400px) {
     /* CTA */
     #cta {
         padding: 0 !important;
@@ -282,15 +353,6 @@ main {
         align-items: center !important;
 
         text-align: center ;
-    }
-
-    /* Commitments */
-    #commitments {
-        display: grid !important;
-        grid-template-areas: 
-        "cmt-1 cmt-2"
-        "cmt-3 cmt-4";
-        justify-content: space-evenly !important;
     }
 
     /* Porque chamar um chaveiro */
@@ -321,7 +383,6 @@ main {
 
     #map iframe {
         width: 100%;
-        height: 30rem;
     }
 }
 
@@ -348,5 +409,11 @@ main {
 
     .lock-text p {
         text-align: justify;
+    }
+}
+
+@media screen and (max-width:956px) {
+    #commitments {
+        margin-top: 2.250rem;
     }
 }
